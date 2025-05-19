@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+h1 {
+    color: #0066cc;
+}
+
+nav {
+    margin: 10px 0;
+}
+
+nav a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #333;
+}
+
+nav a:hover {
+    color: #0066cc;
+    text-decoration: underline;
+}
+
+section {
+    margin: 30px 0;
+}
+
+h2 {
+    color: #0066cc;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.box-examples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+/* 기본 박스 스타일 */
+.box {
+    background-color: #f0f8ff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 박스 모델 예제 */
+.content-box {
+    width: 150px;
+    height: 80px;
+    background-color: #e3f2fd;
+}
+
+.padding-box {
+    width: 150px;
+    height: 80px;
+    padding: 20px;
+    background-color: #bbdefb;
+}
+
+.border-box {
+    width: 150px;
+    height: 80px;
+    padding: 20px;
+    border: 5px solid #2196f3;
+    background-color: #90caf9;
+}
+
+.margin-box {
+    width: 150px;
+    height: 80px;
+    padding: 20px;
+    border: 5px solid #0d47a1;
+    margin: 30px;
+    background-color: #64b5f6;
+}
+
+/* box-sizing 예제 */
+.box-sizing-content, .box-sizing-border {
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    border: 10px solid #4caf50;
+    background-color: #c8e6c9;
+    text-align: center;
+}
+
+.box-sizing-content {
+    box-sizing: content-box;
+}
+
+.box-sizing-border {
+    box-sizing: border-box;
+}
+
+/* 둥근 모서리와 그림자 */
+.rounded-box {
+    width: 200px;
+    height: 100px;
+    background-color: #ffebee;
+    border: 1px solid #f44336;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shadow-box {
+    width: 200px;
+    height: 100px;
+    background-color: #e8f5e9;
+    border: 1px solid #4caf50;
+    box-shadow: 5px 5px 10px #888;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    margin-top: 30px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+} 

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 테이블</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .example {
+            background-color: #f8f9fa;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        code {
+            background-color: #f5f5f5;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: Consolas, monospace;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        caption {
+            caption-side: top;
+            padding: 10px;
+            font-weight: bold;
+        }
+        .styled-table {
+            background-color: #fff;
+        }
+        .styled-table th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .styled-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .styled-table tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>HTML 테이블</h1>
+            <nav>
+                <a href="../index.html">HTML 기초 메인으로</a> |
+                <a href="../05-images/index.html">이전: 이미지</a> |
+                <a href="../07-forms/index.html">다음: 폼</a>
+            </nav>
+        </header>
+
+        <main>
+            <section>
+                <h2>기본 테이블 구조</h2>
+                <p>HTML 테이블은 다음 태그들로 구성됩니다:</p>
+                <ul>
+                    <li><code>&lt;table&gt;</code>: 테이블을 정의</li>
+                    <li><code>&lt;tr&gt;</code>: 테이블 행(row)을 정의</li>
+                    <li><code>&lt;th&gt;</code>: 테이블 헤더 셀을 정의</li>
+                    <li><code>&lt;td&gt;</code>: 테이블 데이터 셀을 정의</li>
+                </ul>
+
+                <div class="example">
+                    <h3>간단한 테이블 예제</h3>
+                    <table>
+                        <tr>
+                            <th>이름</th>
+                            <th>나이</th>
+                            <th>직업</th>
+                        </tr>
+                        <tr>
+                            <td>홍길동</td>
+                            <td>25</td>
+                            <td>개발자</td>
+                        </tr>
+                        <tr>
+                            <td>김영희</td>
+                            <td>28</td>
+                            <td>디자이너</td>
+                        </tr>
+                        <tr>
+                            <td>이철수</td>
+                            <td>32</td>
+                            <td>마케터</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+
+            <section>
+                <h2>테이블 구성 요소</h2>
+                <div class="example">
+                    <h3>캡션(Caption)과 테이블 구조 태그</h3>
+                    <table>
+                        <caption>직원 정보</caption>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>이름</th>
+                                <th>부서</th>
+                                <th>직급</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1001</td>
+                                <td>홍길동</td>
+                                <td>개발팀</td>
+                                <td>과장</td>
+                            </tr>
+                            <tr>
+                                <td>1002</td>
+                                <td>김영희</td>
+                                <td>디자인팀</td>
+                                <td>대리</td>
+                            </tr>
+                            <tr>
+                                <td>1003</td>
+                                <td>이철수</td>
+                                <td>마케팅팀</td>
+                                <td>부장</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="4">총 직원 수: 3명</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <p>테이블 구조를 명확히 하는 태그들:</p>
+                <ul>
+                    <li><code>&lt;caption&gt;</code>: 테이블의 제목이나 설명을 추가</li>
+                    <li><code>&lt;thead&gt;</code>: 테이블의 헤더 부분을 그룹화</li>
+                    <li><code>&lt;tbody&gt;</code>: 테이블의 본문 부분을 그룹화</li>
+                    <li><code>&lt;tfoot&gt;</code>: 테이블의 바닥글 부분을 그룹화</li>
+                </ul>
+            </section>
+
+        </main>
+
+        <footer>
+            <p>HTML 기초 학습 - 테이블 &copy; 2025</p>
+        </footer>
+    </div>
+</body>
+</html> 

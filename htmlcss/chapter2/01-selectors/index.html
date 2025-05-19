@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 선택자</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CSS 선택자</h1>
+            <nav>
+                <ul>
+                    <li><a href="../../chapter1/index.html">HTML 기초</a></li>
+                    <li><a href="../index.html">CSS 기초 메인으로</a></li>
+                    <li><a href="../02-colors/index.html">다음: 색상과 배경</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="intro">
+                <h2>선택자란?</h2>
+                <p>CSS 선택자는 스타일을 적용할 HTML 요소를 선택하는 패턴입니다. 선택자를 사용하여 특정 요소를 대상으로 스타일을 적용할 수 있습니다.</p>
+            </section>
+
+            <section id="basic-selectors" class="selector-section">
+                <h2>기본 선택자</h2>
+                <div class="example">
+                    <h3>1. 전체 선택자 (*)</h3>
+                    <div class="all-selector-example">
+                        <p>이 텍스트는 전체 선택자의 영향을 받습니다.</p>
+                        <span>이 텍스트도 전체 선택자의 영향을 받습니다.</span>
+                    </div>
+                    <pre><code>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}</code></pre>
+                </div>
+
+                <div class="example">
+                    <h3>2. 요소 선택자 (태그 선택자)</h3>
+                    <div class="element-selector-example">
+                        <p>이 단락은 p 선택자의 영향을 받습니다.</p>
+                        <span>이 텍스트는 span 선택자의 영향을 받습니다.</span>
+                    </div>
+                    <pre><code>p {
+    color: blue;
+}
+span {
+    font-weight: bold;
+}</code></pre>
+                </div>
+
+                <div class="example">
+                    <h3>3. 클래스 선택자 (.class)</h3>
+                    <div class="class-selector-example">
+                        <p class="highlight">이 단락은 .highlight 클래스 선택자의 영향을 받습니다.</p>
+                        <p>이 단락은 클래스 선택자의 영향을 받지 않습니다.</p>
+                        <span class="highlight">이 텍스트도 .highlight 클래스 선택자의 영향을 받습니다.</span>
+                    </div>
+                    <pre><code>.highlight {
+    background-color: yellow;
+    padding: 5px;
+}</code></pre>
+                </div>
+
+                <div class="example">
+                    <h3>4. ID 선택자 (#id)</h3>
+                    <div class="id-selector-example">
+                        <p id="unique">이 단락은 #unique ID 선택자의 영향을 받습니다.</p>
+                        <p>이 단락은 ID 선택자의 영향을 받지 않습니다.</p>
+                    </div>
+                    <pre><code>#unique {
+    color: red;
+    font-weight: bold;
+}</code></pre>
+                </div>
+            </section>
+
+            <section id="combinators" class="selector-section">
+                <h2>결합 선택자</h2>
+                <div class="example">
+                    <h3>1. 자식 선택자 (>)</h3>
+                    <div class="child-selector-example">
+                        <div class="parent">
+                            <p>이 단락은 div.parent > p 선택자의 영향을 받습니다.</p>
+                            <div>
+                                <p>이 단락은 영향을 받지 않습니다 (직접적인 자식이 아님).</p>
+                            </div>
+                        </div>
+                    </div>
+                    <pre><code>.parent > p {
+    border-left: 3px solid blue;
+    padding-left: 10px;
+}</code></pre>
+                </div>
+
+                <div class="example">
+                    <h3>2. 자손 선택자 (공백)</h3>
+                    <div class="descendant-selector-example">
+                        <div class="ancestor">
+                            <p>이 단락은 div.ancestor p 선택자의 영향을 받습니다.</p>
+                            <div>
+                                <p>이 단락도 영향을 받습니다 (직접적인 자식이 아니더라도 자손임).</p>
+                            </div>
+                        </div>
+                    </div>
+                    <pre><code>.ancestor p {
+    color: green;
+}</code></pre>
+                </div>
+
+                <div class="example">
+                    <h3>3. 인접 형제 선택자 (+)</h3>
+                    <div class="adjacent-selector-example">
+                        <h4>제목</h4>
+                        <p>이 단락은 h4 + p 선택자의 영향을 받습니다 (h4 바로 다음에 오는 p).</p>
+                        <p>이 단락은 영향을 받지 않습니다 (인접 형제가 아님).</p>
+                    </div>
+                    <pre><code>h4 + p {
+    font-style: italic;
+}</code></pre>
+                </div>
+
+                <div class="example">
+                    <h3>4. 일반 형제 선택자 (~)</h3>
+                    <div class="sibling-selector-example">
+                        <h4>제목</h4>
+                        <p>이 단락은 h4 ~ p 선택자의 영향을 받습니다 (h4 이후의 모든 p).</p>
+                        <div>중간에 다른 요소가 있어도</div>
+                        <p>이 단락도 영향을 받습니다 (같은 부모 아래의 형제).</p>
+                    </div>
+                    <pre><code>h4 ~ p {
+    text-decoration: underline;
+}</code></pre>
+                </div>
+            </section>
+
+            <section id="pseudo-selectors" class="selector-section">
+                <h2>가상 선택자</h2>
+                <div class="example">
+                    <h3>1. 가상 클래스 (:)</h3>
+                    <div class="pseudo-class-example">
+                        <a href="#" class="hover-example">마우스를 올려보세요</a>
+                        <ul>
+                            <li>첫 번째 항목 (:first-child)</li>
+                            <li>두 번째 항목</li>
+                            <li>세 번째 항목</li>
+                            <li>마지막 항목 (:last-child)</li>
+                        </ul>
+                        <p>이 단락에는 <span class="first-letter">가상 요소</span>도 사용됩니다.</p>
+                    </div>
+                    <pre><code>a.hover-example:hover {
+    color: red;
+    text-decoration: none;
+}
+li:first-child {
+    font-weight: bold;
+}
+li:last-child {
+    color: blue;
+}</code></pre>
+                </div>
+
+                <div class="example">
+                    <h3>2. 가상 요소 (::)</h3>
+                    <div class="pseudo-element-example">
+                        <p class="first-line">이 단락의 첫 번째 줄은 ::first-line 가상 요소의 영향을 받습니다. 
+                        텍스트를 충분히 길게 작성하여 여러 줄에 걸쳐 표시되도록 합니다. 
+                        브라우저 창의 크기에 따라 첫 번째 줄이 결정됩니다.</p>
+                        <p class="first-letter">이 단락의 첫 글자는 ::first-letter 가상 요소의 영향을 받습니다.</p>
+                    </div>
+                    <pre><code>p.first-line::first-line {
+    font-weight: bold;
+}
+p.first-letter::first-letter {
+    font-size: 2em;
+    color: red;
+}</code></pre>
+                </div>
+            </section>
+
+            <section id="attribute-selectors" class="selector-section">
+                <h2>속성 선택자</h2>
+                <div class="example">
+                    <h3>속성 선택자 사용 예</h3>
+                    <div class="attribute-selector-example">
+                        <a href="https://example.com" target="_blank">외부 링크 (target 속성 있음)</a><br>
+                        <a href="local.html">내부 링크</a><br>
+                        <input type="text" placeholder="텍스트 입력...">
+                        <input type="email" placeholder="이메일 입력...">
+                    </div>
+                    <pre><code>a[target] {
+    color: orange;  /* target 속성이 있는 링크 */
+}
+input[type="email"] {
+    border-color: green;  /* type이 email인 입력 필드 */
+}</code></pre>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>CSS 기초 학습 - 선택자 &copy; 2025</p>
+        </footer>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 이미지</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .example {
+            background-color: #f8f9fa;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        code {
+            background-color: #f5f5f5;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: Consolas, monospace;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .responsive-img {
+            max-width: 100%;
+            height: auto;
+        }
+        .align-left {
+            float: left;
+            margin-right: 15px;
+        }
+        .align-right {
+            float: right;
+            margin-left: 15px;
+        }
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>HTML 이미지</h1>
+            <nav>
+                <a href="../index.html">HTML 기초 메인으로</a> |
+                <a href="../04-links/index.html">이전: 링크</a> |
+                <a href="../06-tables/index.html">다음: 테이블</a>
+            </nav>
+        </header>
+
+        <main>
+            <section>
+                <h2>이미지 기본 구조</h2>
+                <p>HTML에서 이미지는 <code>&lt;img&gt;</code> 태그를 사용하여 웹 페이지에 삽입합니다. <code>&lt;img&gt;</code> 태그는 빈 요소로, 닫는 태그가 없습니다.</p>
+                <div class="example">
+                    <h3>기본 이미지 예제</h3>
+                    <img src="https://udopt.co.uk/wp-content/uploads/2012/09/penguin2.jpg" alt="예제 이미지">
+                    <pre><code>&lt;img src="https://via.placeholder.com/300x200" alt="예제 이미지"&gt;</code></pre>
+                </div>
+            </section>
+
+            <section>
+                <h2>이미지 태그 필수 속성</h2>
+                <ul>
+                    <li><code>src</code>: 이미지 파일의 경로 (필수)</li>
+                    <li><code>alt</code>: 이미지를 표시할 수 없을 때 대체 텍스트 (접근성을 위해 필수)</li>
+                </ul>
+                <div class="example">
+                    <h3>이미지 경로 예제</h3>
+                    <h4>절대 경로</h4>
+                    <pre><code>&lt;img src="https://example.com/images/photo.jpg" alt="예제 사진"&gt;</code></pre>
+                    
+                    <h4>상대 경로</h4>
+                    <pre><code><!-- 같은 폴더 내 이미지 -->
+&lt;img src="photo.jpg" alt="예제 사진"&gt;
+
+<!-- 하위 폴더 내 이미지 -->
+&lt;img src="images/photo.jpg" alt="예제 사진"&gt;
+
+<!-- 상위 폴더 내 이미지 -->
+&lt;img src="../images/photo.jpg" alt="예제 사진"&gt;</code></pre>
+                </div>
+            </section>
+
+            <section>
+                <h2>이미지 크기 속성</h2>
+                <p>HTML에서 이미지의 크기를 지정하는 방법은 두 가지가 있습니다:</p>
+                <div class="example">
+                    <h3>1. HTML 속성 사용</h3>
+                    <img src="https://udopt.co.uk/wp-content/uploads/2012/09/penguin2.jpg" alt="HTML 속성으로 크기 조절된 이미지" width="200" height="100">
+                    <pre><code>&lt;img src="https://via.placeholder.com/300x200" alt="HTML 속성으로 크기 조절된 이미지" width="200" height="100"&gt;</code></pre>
+                    
+                    <h3>2. CSS 속성 사용 (더 권장됨)</h3>
+                    <img src="https://udopt.co.uk/wp-content/uploads/2012/09/penguin2.jpg" alt="CSS로 크기 조절된 이미지" style="width: 200px; height: 100px;">
+                    <pre><code>&lt;img src="https://via.placeholder.com/300x200" alt="CSS로 크기 조절된 이미지" style="width: 200px; height: 100px;"&gt;</code></pre>
+                </div>
+            </section>
+
+            <section>
+                <h2>반응형 이미지</h2>
+                <p>반응형 이미지는 다양한 화면 크기에 맞게 자동으로 크기가 조절됩니다.</p>
+                <div class="example">
+                    <h3>CSS를 사용한 반응형 이미지</h3>
+                    <img src="https://udopt.co.uk/wp-content/uploads/2012/09/penguin2.jpg" alt="반응형 이미지" class="responsive-img">
+                    <pre><code>&lt;img src="https://via.placeholder.com/800x400" alt="반응형 이미지" class="responsive-img"&gt;
+
+/* CSS */
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+}</code></pre>
+                </div>
+            </section>
+
+            
+
+            <section>
+                <h2>figure와 figcaption</h2>
+                <p><code>&lt;figure&gt;</code>와 <code>&lt;figcaption&gt;</code> 요소를 사용하여 이미지에 캡션을 추가할 수 있습니다.</p>
+                <div class="example">
+                    <figure>
+                        <img src="https://hips.hearstapps.com/hmg-prod/images/alpe-di-siusi-sunrise-with-sassolungo-or-langkofel-royalty-free-image-1623254127.jpg?crop=1xw:1xh;center,top&resize=500:*" alt="자연 풍경">
+                        <figcaption>아름다운 자연 풍경의 모습 (예시 이미지)</figcaption>
+                    </figure>
+                    <pre><code>&lt;figure&gt;
+    &lt;img src="landscape.jpg" alt="자연 풍경"&gt;
+    &lt;figcaption&gt;아름다운 자연 풍경의 모습&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>HTML 기초 학습 - 이미지 &copy; 2025</p>
+        </footer>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+h1 {
+    color: #0066cc;
+}
+
+nav {
+    margin: 10px 0;
+}
+
+nav a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #333;
+}
+
+nav a:hover {
+    color: #0066cc;
+    text-decoration: underline;
+}
+
+.example {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+h2, h3 {
+    color: #0066cc;
+    margin-bottom: 10px;
+}
+
+/* 글꼴 속성 */
+.font-family {
+    font-family: Arial, sans-serif;
+}
+
+.font-size {
+    font-size: 1.2em;
+}
+
+.font-weight {
+    font-weight: bold;
+}
+
+.font-style {
+    font-style: italic;
+}
+
+/* 텍스트 서식 */
+.text-align {
+    text-align: center;
+}
+
+.text-decoration {
+    text-decoration: underline;
+}
+
+.text-transform {
+    text-transform: uppercase;
+}
+
+.line-height {
+    line-height: 1.8;
+}
+
+.letter-spacing {
+    letter-spacing: 2px;
+}
+
+.word-spacing {
+    word-spacing: 5px;
+}
+
+/* 텍스트 그림자 */
+.text-shadow1 {
+    text-shadow: 2px 2px 4px #000;
+}
+
+.text-shadow2 {
+    text-shadow: 0 0 5px #ff0000;
+}
+
+footer {
+    margin-top: 30px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+} 

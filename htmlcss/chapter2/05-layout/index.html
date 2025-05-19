@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 레이아웃</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CSS 레이아웃</h1>
+            <nav>
+                <a href="../index.html">CSS 기초 메인으로</a>
+                <a href="../04-box-model/index.html">이전: 박스 모델</a>
+                <a href="../06-flexbox/index.html">다음: Flexbox</a>
+            </nav>
+        </header>
+
+        <main>
+            <section>
+                <h2>기본 레이아웃 속성</h2>
+                
+                <div class="example">
+                    <h3>display 속성</h3>
+                    <div class="display-examples">
+                        <span class="display-inline">display: inline</span>
+                        <span class="display-inline">inline 요소는 콘텐츠만큼만 공간을 차지합니다.</span>
+                        
+                        <div class="display-block">display: block</div>
+                        <div class="display-block">block 요소는 가로 전체 공간을 차지합니다.</div>
+                        
+                        <span class="display-inline-block">display: inline-block</span>
+                        <span class="display-inline-block">inline과 block의 특성을 모두 가집니다.</span>
+                    </div>
+                </div>
+                
+                <div class="example">
+                    <h3>position 속성</h3>
+                    <div class="position-container">
+                        <div class="position-static">position: static (기본값)</div>
+                        <div class="position-relative">position: relative</div>
+                        <div class="position-absolute">position: absolute</div>
+                        <div class="position-fixed">position: fixed</div>
+                    </div>
+                </div>
+                
+                <div class="example">
+                    <h3>float 속성</h3>
+                    <div class="float-container">
+                        <div class="float-left">float: left</div>
+                        <div class="float-right">float: right</div>
+                        <div class="clear-both">clear: both</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>CSS 기초 학습 - 레이아웃 &copy; 2025</p>
+        </footer>
+    </div>
+</body>
+</html> 

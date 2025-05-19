@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 색상과 배경</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CSS 색상과 배경</h1>
+            <nav>
+                <ul>
+                    <li><a href="../../chapter1/index.html">HTML 기초</a></li>
+                    <li><a href="../index.html">CSS 기초 메인으로</a></li>
+                    <li><a href="../01-selectors/index.html">이전: 선택자</a></li>
+                    <li><a href="../03-text-styling/index.html">다음: 텍스트 스타일링</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="intro">
+                <h2>색상과 배경 속성</h2>
+                <p>CSS에서는 다양한 방법으로 색상을 지정하고 배경을 설정할 수 있습니다. 이 페이지에서는 색상 값의 표현 방식, 배경색, 배경 이미지, 그라데이션 등을 학습합니다.</p>
+            </section>
+
+            <section class="color-section">
+                <h2>색상 값 표현 방식</h2>
+                
+                <div class="example">
+                    <h3>1. 색상 이름</h3>
+                    <div class="color-preview">
+                        <div class="color-box" style="background-color: red;"></div>
+                        <div class="color-box" style="background-color: green;"></div>
+                        <div class="color-box" style="background-color: blue;"></div>
+                        <div class="color-box" style="background-color: yellow;"></div>
+                        <div class="color-box" style="background-color: purple;"></div>
+                    </div>
+                    <pre><code>color: red;
+color: green;
+color: blue;
+color: yellow;
+color: purple;</code></pre>
+                    <p>CSS는 140개 이상의 표준 색상 이름을 지원합니다.</p>
+                </div>
+                
+                <div class="example">
+                    <h3>2. RGB/RGBA 값</h3>
+                    <div class="color-preview">
+                        <div class="color-box" style="background-color: rgb(255, 0, 0);"></div>
+                        <div class="color-box" style="background-color: rgb(0, 255, 0);"></div>
+                        <div class="color-box" style="background-color: rgb(0, 0, 255);"></div>
+                        <div class="color-box" style="background-color: rgba(255, 0, 0, 0.5);"></div>
+                        <div class="color-box" style="background-color: rgba(0, 0, 255, 0.5);"></div>
+                    </div>
+                    <pre><code>color: rgb(255, 0, 0);     /* 빨강 */
+color: rgb(0, 255, 0);     /* 녹색 */
+color: rgb(0, 0, 255);     /* 파랑 */
+color: rgba(255, 0, 0, 0.5); /* 반투명 빨강 */
+color: rgba(0, 0, 255, 0.5); /* 반투명 파랑 */</code></pre>
+                    <p>RGB는 Red, Green, Blue의 혼합으로 색상을 표현합니다. 각 값은 0에서 255 사이입니다. RGBA는 알파(투명도) 채널을 추가한 것으로, 0(완전 투명)에서 1(완전 불투명) 사이의 값을 가집니다.</p>
+                </div>
+                
+                <div class="example">
+                    <h3>3. HEX 코드</h3>
+                    <div class="color-preview">
+                        <div class="color-box" style="background-color: #ff0000;"></div>
+                        <div class="color-box" style="background-color: #00ff00;"></div>
+                        <div class="color-box" style="background-color: #0000ff;"></div>
+                        <div class="color-box" style="background-color: #ff6600;"></div>
+                        <div class="color-box" style="background-color: #6600cc;"></div>
+                    </div>
+                    <pre><code>color: #ff0000;  /* 빨강 */
+color: #00ff00;  /* 녹색 */
+color: #0000ff;  /* 파랑 */
+color: #ff6600;  /* 주황 */
+color: #6600cc;  /* 보라 */</code></pre>
+                    <p>16진수 표기법으로, #RRGGBB 형식으로 표현합니다. 각 색상 쌍은 0에서 255를 16진수(00-FF)로 나타냅니다.</p>
+                </div>
+                
+                <div class="example">
+                    <h3>4. HSL/HSLA 값</h3>
+                    <div class="color-preview">
+                        <div class="color-box" style="background-color: hsl(0, 100%, 50%);"></div>
+                        <div class="color-box" style="background-color: hsl(120, 100%, 50%);"></div>
+                        <div class="color-box" style="background-color: hsl(240, 100%, 50%);"></div>
+                        <div class="color-box" style="background-color: hsla(0, 100%, 50%, 0.5);"></div>
+                        <div class="color-box" style="background-color: hsla(240, 100%, 50%, 0.5);"></div>
+                    </div>
+                    <pre><code>color: hsl(0, 100%, 50%);     /* 빨강 */
+color: hsl(120, 100%, 50%);   /* 녹색 */
+color: hsl(240, 100%, 50%);   /* 파랑 */
+color: hsla(0, 100%, 50%, 0.5);   /* 반투명 빨강 */
+color: hsla(240, 100%, 50%, 0.5); /* 반투명 파랑 */</code></pre>
+                    <p>HSL은 Hue(색상, 0-360), Saturation(채도, 0%-100%), Lightness(명도, 0%-100%)로 색상을 표현합니다. HSLA는 알파 채널을 추가한 것입니다.</p>
+                </div>
+            </section>
+
+            <section class="background-section">
+                <h2>배경 속성</h2>
+                
+                <div class="example">
+                    <h3>1. 배경색 (background-color)</h3>
+                    <div class="bg-example bg-color-example"></div>
+                    <pre><code>.bg-color-example {
+    background-color: #3498db;
+}</code></pre>
+                </div>
+                
+                <div class="example">
+                    <h3>2. 배경 이미지 (background-image)</h3>
+                    <div class="bg-example bg-image-example"></div>
+                    <pre><code>.bg-image-example {
+    background-image: url('https://hips.hearstapps.com/hmg-prod/images/alpe-di-siusi-sunrise-with-sassolungo-or-langkofel-royalty-free-image-1623254127.jpg?crop=1xw:1xh;center,top&resize=500:*');
+    height: 150px;
+}</code></pre>
+                </div>
+                
+                <div class="example">
+                    <h3>3. 배경 반복 (background-repeat)</h3>
+                    <div class="bg-preview">
+                        <div class="bg-example bg-repeat-example">
+                            <p>repeat (기본값)</p>
+                        </div>
+                        <div class="bg-example bg-repeat-x-example">
+                            <p>repeat-x</p>
+                        </div>
+                        <div class="bg-example bg-repeat-y-example">
+                            <p>repeat-y</p>
+                        </div>
+                        <div class="bg-example bg-no-repeat-example">
+                            <p>no-repeat</p>
+                        </div>
+                    </div>
+                    <pre><code>.bg-repeat-example {
+    background-image: url('pattern.png');
+    background-repeat: repeat;
+}
+.bg-repeat-x-example {
+    background-image: url('pattern.png');
+    background-repeat: repeat-x;
+}
+.bg-repeat-y-example {
+    background-image: url('pattern.png');
+    background-repeat: repeat-y;
+}
+.bg-no-repeat-example {
+    background-image: url('pattern.png');
+    background-repeat: no-repeat;
+}</code></pre>
+                </div>
+                
+                <div class="example">
+                    <h3>4. 배경 위치 (background-position)</h3>
+                    <div class="bg-preview">
+                        <div class="bg-example bg-position-1">
+                            <p>center</p>
+                        </div>
+                        <div class="bg-example bg-position-2">
+                            <p>top right</p>
+                        </div>
+                        <div class="bg-example bg-position-3">
+                            <p>50% 25%</p>
+                        </div>
+                    </div>
+                    <pre><code>.bg-position-1 {
+    background-image: url('image.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.bg-position-2 {
+    background-image: url('image.jpg');
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+.bg-position-3 {
+    background-image: url('image.jpg');
+    background-repeat: no-repeat;
+    background-position: 50% 25%;
+}</code></pre>
+                </div>
+                
+                <div class="example">
+                    <h3>5. 배경 크기 (background-size)</h3>
+                    <div class="bg-preview">
+                        <div class="bg-example bg-size-1">
+                            <p>auto</p>
+                        </div>
+                        <div class="bg-example bg-size-2">
+                            <p>cover</p>
+                        </div>
+                        <div class="bg-example bg-size-3">
+                            <p>contain</p>
+                        </div>
+                    </div>
+                    <pre><code>.bg-size-1 {
+    background-image: url('image.jpg');
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+.bg-size-2 {
+    background-image: url('image.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bg-size-3 {
+    background-image: url('image.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}</code></pre>
+                </div>
+                
+                <div class="example">
+                    <h3>6. 배경 고정 (background-attachment)</h3>
+                    <div class="bg-preview">
+                        <div class="scroll-container">
+                            <div class="bg-attachment-scroll">
+                                <p>scroll (기본값)</p>
+                                <p>내용을 스크롤해보세요</p>
+                                <p>배경은 스크롤됩니다</p>
+                            </div>
+                        </div>
+                        <div class="scroll-container">
+                            <div class="bg-attachment-fixed">
+                                <p>fixed</p>
+                                <p>내용을 스크롤해보세요</p>
+                                <p>배경은 고정됩니다</p>
+                            </div>
+                        </div>
+                    </div>
+                    <pre><code>.bg-attachment-scroll {
+    background-image: url('image.jpg');
+    background-attachment: scroll;
+}
+.bg-attachment-fixed {
+    background-image: url('image.jpg');
+    background-attachment: fixed;
+}</code></pre>
+                </div>
+                
+                <div class="example">
+                    <h3>7. 배경 단축 속성 (background)</h3>
+                    <div class="bg-example bg-shorthand"></div>
+                    <pre><code>.bg-shorthand {
+    background: #3498db url('pattern.png') no-repeat center/cover;
+    /* 색상 이미지 반복 위치/크기 */
+}</code></pre>
+                    <p>단축 속성으로 여러 배경 속성을 한 번에 설정할 수 있습니다.</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>CSS 기초 학습 - 색상과 배경 &copy; 2025</p>
+        </footer>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,298 @@
+/* 기본 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+header {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+    color: #0066cc;
+    margin-bottom: 15px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+nav a:hover {
+    color: #0066cc;
+    text-decoration: underline;
+}
+
+.intro {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+section h2 {
+    color: #0066cc;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.example {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.example h3 {
+    margin-bottom: 15px;
+    color: #0066cc;
+}
+
+pre {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin: 15px 0;
+}
+
+code {
+    font-family: Consolas, monospace;
+}
+
+footer {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+
+/* 색상 예제 스타일 */
+.color-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.color-box {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* 배경 예제 스타일 */
+.bg-example {
+    width: 100%;
+    height: 100px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    position: relative;
+}
+
+.bg-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.bg-preview > div {
+    flex: 1 1 calc(50% - 10px);
+    min-width: 250px;
+}
+
+.bg-example p {
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 3px;
+    display: inline-block;
+    margin: 10px;
+}
+
+.scroll-container {
+    height: 150px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    margin: 10px 0;
+}
+
+.scroll-container div {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* 구체적인 배경 예제 스타일 */
+.bg-color-example {
+    background-color: #3498db;
+}
+
+.bg-image-example {
+    background-image: url('https://hips.hearstapps.com/hmg-prod/images/alpe-di-siusi-sunrise-with-sassolungo-or-langkofel-royalty-free-image-1623254127.jpg?crop=1xw:1xh;center,top&resize=500:*');
+    height: 150px;
+}
+
+.bg-repeat-example {
+    background-image: url('https://hips.hearstapps.com/hmg-prod/images/alpe-di-siusi-sunrise-with-sassolungo-or-langkofel-royalty-free-image-1623254127.jpg?crop=1xw:1xh;center,top&resize=50:*');
+    background-repeat: repeat;
+}
+
+.bg-repeat-x-example {
+    background-image: url('https://hips.hearstapps.com/hmg-prod/images/alpe-di-siusi-sunrise-with-sassolungo-or-langkofel-royalty-free-image-1623254127.jpg?crop=1xw:1xh;center,top&resize=50:*');
+    background-repeat: repeat-x;
+}
+
+.bg-repeat-y-example {
+    background-image: url('https://hips.hearstapps.com/hmg-prod/images/alpe-di-siusi-sunrise-with-sassolungo-or-langkofel-royalty-free-image-1623254127.jpg?crop=1xw:1xh;center,top&resize=50:*');
+    background-repeat: repeat-y;
+}
+
+.bg-no-repeat-example {
+    background-image: url('https://hips.hearstapps.com/hmg-prod/images/alpe-di-siusi-sunrise-with-sassolungo-or-langkofel-royalty-free-image-1623254127.jpg?crop=1xw:1xh;center,top&resize=100:*');
+    background-repeat: no-repeat;
+}
+
+.bg-position-1 {
+    background-image: url('https://hips.hearstapps.com/hmg-prod/images/alpe-di-siusi-sunrise-with-sassolungo-or-langkofel-royalty-free-image-1623254127.jpg?crop=1xw:1xh;center,top&resize=100:*');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.bg-position-2 {
+    background-image: url('https://hips.hearstapps.com/hmg-prod/images/alpe-di-siusi-sunrise-with-sassolungo-or-langkofel-royalty-free-image-1623254127.jpg?crop=1xw:1xh;center,top&resize=100:*');
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+
+.bg-position-3 {
+    background-image: url('https://hips.hearstapps.com/hmg-prod/images/alpe-di-siusi-sunrise-with-sassolungo-or-langkofel-royalty-free-image-1623254127.jpg?crop=1xw:1xh;center,top&resize=100:*');
+    background-repeat: no-repeat;
+    background-position: 50% 25%;
+}
+
+.bg-size-1 {
+    background-image: url('https://hips.hearstapps.com/hmg-prod/images/alpe-di-siusi-sunrise-with-sassolungo-or-langkofel-royalty-free-image-1623254127.jpg?crop=1xw:1xh;center,top&resize=100:*');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+}
+
+.bg-size-2 {
+    background-image: url('https://hips.hearstapps.com/hmg-prod/images/alpe-di-siusi-sunrise-with-sassolungo-or-langkofel-royalty-free-image-1623254127.jpg?crop=1xw:1xh;center,top&resize=100:*');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.bg-size-3 {
+    background-image: url('https://hips.hearstapps.com/hmg-prod/images/alpe-di-siusi-sunrise-with-sassolungo-or-langkofel-royalty-free-image-1623254127.jpg?crop=1xw:1xh;center,top&resize=100:*');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.bg-attachment-scroll {
+    background-image: url('https://hips.hearstapps.com/hmg-prod/images/alpe-di-siusi-sunrise-with-sassolungo-or-langkofel-royalty-free-image-1623254127.jpg?crop=1xw:1xh;center,top&resize=500:*');
+    background-attachment: scroll;
+}
+
+.bg-attachment-fixed {
+    background-image: url('https://hips.hearstapps.com/hmg-prod/images/alpe-di-siusi-sunrise-with-sassolungo-or-langkofel-royalty-free-image-1623254127.jpg?crop=1xw:1xh;center,top&resize=500:*');
+    background-attachment: fixed;
+}
+
+.bg-shorthand {
+    background: #3498db url('https://hips.hearstapps.com/hmg-prod/images/alpe-di-siusi-sunrise-with-sassolungo-or-langkofel-royalty-free-image-1623254127.jpg?crop=1xw:1xh;center,top&resize=1000:*') no-repeat center/cover;
+    height: 150px;
+}
+
+/* 그라데이션 스타일 */
+.gradient-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.gradient {
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.linear-gradient-1 {
+    background: linear-gradient(to right, #3498db, #2ecc71);
+}
+
+.linear-gradient-2 {
+    background: linear-gradient(45deg, #e74c3c, #f39c12, #2ecc71);
+}
+
+.linear-gradient-3 {
+    background: linear-gradient(to bottom, #3498db 0%, #2980b9 50%, #1f5f8b 100%);
+}
+
+.radial-gradient-1 {
+    background: radial-gradient(circle, #3498db, #2ecc71);
+}
+
+.radial-gradient-2 {
+    background: radial-gradient(ellipse at top, #e74c3c, #f39c12);
+}
+
+.radial-gradient-3 {
+    background: radial-gradient(circle at center, #3498db 0%, #2980b9 50%, #1f5f8b 100%);
+}
+
+.repeating-linear {
+    background: repeating-linear-gradient(45deg, #3498db, #3498db 10px, #2980b9 10px, #2980b9 20px);
+}
+
+.repeating-radial {
+    background: repeating-radial-gradient(circle, #3498db, #3498db 10px, #2980b9 10px, #2980b9 20px);
+}
+
+.multiple-bg-example {
+    background: 
+        url('https://via.placeholder.com/50'),
+        linear-gradient(to right, rgba(52, 152, 219, 0.8), rgba(46, 204, 113, 0.8)),
+        url('https://via.placeholder.com/800x400');
+    background-repeat: repeat, no-repeat, no-repeat;
+    background-position: center, center, center;
+    background-size: auto, cover, cover;
+    height: 200px;
+} 

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 링크</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .example {
+            background-color: #f8f9fa;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        code {
+            background-color: #f5f5f5;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: Consolas, monospace;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>HTML 링크</h1>
+            <nav>
+                <a href="../index.html">HTML 기초 메인으로</a> |
+                <a href="../03-lists/index.html">이전: 목록</a> |
+                <a href="../05-images/index.html">다음: 이미지</a>
+            </nav>
+        </header>
+
+        <main>
+            <section>
+                <h2>링크의 기본 구조</h2>
+                <p>HTML에서 링크는 <code>&lt;a&gt;</code> 태그를 사용하여 만듭니다. 가장 중요한 속성은 <code>href</code>로, 이동할 URL을 지정합니다.</p>
+                <div class="example">
+                    <h3>기본 링크 예제</h3>
+                    <p><a href="https://www.example.com">Example 웹사이트</a></p>
+                    <pre><code>&lt;a href="https://www.example.com"&gt;Example 웹사이트&lt;/a&gt;</code></pre>
+                </div>
+            </section>
+
+            <section>
+                <h2>링크 유형</h2>
+                <div class="example">
+                    <h3>1. 외부 링크</h3>
+                    <p><a href="https://www.google.com" target="_blank">Google (새 탭에서 열기)</a></p>
+                    <pre><code>&lt;a href="https://www.google.com" target="_blank"&gt;Google (새 탭에서 열기)&lt;/a&gt;</code></pre>
+                    <p>속성 <code>target="_blank"</code>는 링크를 새 탭이나 창에서 열도록 지정합니다.</p>
+                </div>
+
+                <div class="example">
+                    <h3>2. 내부 링크 (같은 웹사이트 내 다른 페이지)</h3>
+                    <p><a href="../03-lists/index.html">목록 페이지로 이동</a></p>
+                    <pre><code>&lt;a href="../03-lists/index.html"&gt;목록 페이지로 이동&lt;/a&gt;</code></pre>
+                </div>
+
+                <div class="example">
+                    <h3>3. 페이지 내 링크 (북마크)</h3>
+                    <p><a href="#link-attributes">링크 속성 섹션으로 바로가기</a></p>
+                    <pre><code>&lt;a href="#link-attributes"&gt;링크 속성 섹션으로 바로가기&lt;/a&gt;</code></pre>
+                </div>
+
+                <div class="example">
+                    <h3>4. 이메일 링크</h3>
+                    <p><a href="mailto:example@example.com">이메일 보내기</a></p>
+                    <pre><code>&lt;a href="mailto:example@example.com"&gt;이메일 보내기&lt;/a&gt;</code></pre>
+                </div>
+
+                <div class="example">
+                    <h3>5. 전화번호 링크</h3>
+                    <p><a href="tel:+8210-1234-5678">전화 걸기: 010-1234-5678</a></p>
+                    <pre><code>&lt;a href="tel:+8210-1234-5678"&gt;전화 걸기: 010-1234-5678&lt;/a&gt;</code></pre>
+                </div>
+            </section>
+
+            <section id="link-attributes">
+                <h2>링크 속성</h2>
+                <table>
+                    <tr>
+                        <th>속성</th>
+                        <th>설명</th>
+                        <th>예제</th>
+                    </tr>
+                    <tr>
+                        <td><code>href</code></td>
+                        <td>링크의 목적지 URL</td>
+                        <td><code>href="https://www.example.com"</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>target</code></td>
+                        <td>링크가 열릴 위치</td>
+                        <td><code>target="_blank"</code> (새 탭/창)</td>
+                    </tr>
+                    <tr>
+                        <td><code>rel</code></td>
+                        <td>현재 문서와 링크된 문서 사이의 관계</td>
+                        <td><code>rel="nofollow"</code> (검색 엔진이 링크를 따라가지 않도록)</td>
+                    </tr>
+                    <tr>
+                        <td><code>title</code></td>
+                        <td>링크에 대한 추가 정보 (마우스 오버 시 툴팁)</td>
+                        <td><code>title="이 링크에 대한 설명"</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>download</code></td>
+                        <td>링크를 클릭하면 대상을 다운로드하도록 지정</td>
+                        <td><code>download="filename.pdf"</code></td>
+                    </tr>
+                </table>
+            </section>
+
+            <section>
+                <h2>상대 경로와 절대 경로</h2>
+                <div class="example">
+                    <h3>절대 경로</h3>
+                    <p>전체 URL을 지정합니다.</p>
+                    <pre><code>&lt;a href="https://www.example.com/page.html"&gt;절대 경로 예제&lt;/a&gt;</code></pre>
+                </div>
+
+                <div class="example">
+                    <h3>상대 경로</h3>
+                    <p>현재 페이지를 기준으로 경로를 지정합니다.</p>
+                    <ul>
+                        <li><code>같은 폴더 내 파일: &lt;a href="contact.html"&gt;연락처&lt;/a&gt;</code></li>
+                        <li><code>하위 폴더 내 파일: &lt;a href="products/item.html"&gt;제품&lt;/a&gt;</code></li>
+                        <li><code>상위 폴더 내 파일: &lt;a href="../index.html"&gt;홈으로&lt;/a&gt;</code></li>
+                    </ul>
+                </div>
+            </section>
+https://images.pexels.com/photos/2071882/pexels-photo-2071882.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500
+        </main>
+
+        <footer>
+            <p>HTML 기초 학습 - 링크 &copy; 2025</p>
+        </footer>
+    </div>
+</body>
+</html> 
