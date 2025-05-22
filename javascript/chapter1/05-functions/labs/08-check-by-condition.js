@@ -4,9 +4,13 @@
 // callback 함수는 해당 숫자가 조건을 만족하면 true, 아니면 false를 반환합니다.
 
 function checkByCondition(num, callback) {
-  // TODO: callback을 이용해 조건 검사
+    // TODO: callback을 이용해 조건 검사
+    return callback(num);
 }
 
 // 1) 짝수인지 검사
 // 2) 10보다 큰지 검사
 // 3) 3의 배수인지 검사
+console.log(checkByCondition(2, (num) => num % 2 == 0));
+console.log(checkByCondition(2, (num) => num > 10));
+console.log(checkByCondition(2, (num) => num % 3 == 0));
