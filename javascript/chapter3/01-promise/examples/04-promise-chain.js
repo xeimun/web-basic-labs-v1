@@ -1,7 +1,7 @@
 // [Promise 체이닝: 콜백 지옥 구조 해소]
 function getUser(id) {
   return new Promise((resolve) => {
-    setTimeout(() => resolve({ id, name: "Kim JS" }), 500);
+    setTimeout(() => resolve({ id, name: "윤유저" }), 500);
   });
 }
 function getPostsByUser(user) {
