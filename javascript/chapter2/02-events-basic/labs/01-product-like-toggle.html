@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <body>
-    <!-- 쇼핑몰 상품 -->
-    <h3>무선 이어폰</h3>
-    <button id="likeBtn">🤍 찜하기</button>
+    <body>
+        <!-- 쇼핑몰 상품 -->
+        <h3>무선 이어폰</h3>
+        <button id="likeBtn">🤍 찜하기</button>
 
-    <script>
-      // TODO: 상품 찜하기 버튼을 누르면 "찜함 ❤️" / "찜취소 🤍"로 텍스트가 바뀌도록 하세요.
-      // 버튼 클릭 시 텍스트 토글
-      // 🤍 찜하기 → ❤️ 찜함 → 🤍 찜하기 → ...
-    </script>
-  </body>
+        <script>
+            // TODO: 상품 찜하기 버튼을 누르면 "찜함 ❤️" / "찜취소 🤍"로 텍스트가 바뀌도록 하세요.
+            // 버튼 클릭 시 텍스트 토글
+            // 🤍 찜하기 → ❤️ 찜함 → 🤍 찜하기 → ...
+
+            // if문 활용용
+            /*
+            document.querySelector("#likeBtn").addEventListener("click", () => {
+                const btn = document.querySelector("#likeBtn");
+                if (btn.textContent === "🤍 찜하기") {
+                    btn.textContent = "❤️ 찜함";
+                } else {
+                    btn.textContent = "🤍 찜하기";
+                }
+            });
+            */
+
+            // classList 활용용
+            const btn = document.querySelector("#likeBtn");
+            btn.addEventListener("click", () => {
+                btn.classList.toggle("liked");
+                btn.textContent = btn.classList.contains("liked")
+                    ? "❤️ 찜함"
+                    : "🤍 찜하기";
+            });
+        </script>
+    </body>
 </html>
