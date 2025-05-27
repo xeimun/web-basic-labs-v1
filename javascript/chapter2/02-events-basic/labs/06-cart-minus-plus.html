@@ -17,12 +17,12 @@
 
             minus.addEventListener("click", () => {
                 if (quantity.textContent >= 1) {
-                    quantity.textContent = quantity.textContent - 1;
+                    quantity.textContent--;
                 }
             });
 
-            plus.addEventListener("click", (e) => {
-                quantity.textContent = Number(quantity.textContent) + 1;
+            plus.addEventListener("click", () => {
+                quantity.textContent++;
             });
         </script>
     </body>
