@@ -1,58 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <body>
-    <!-- 시나리오: 간단한 TODO 리스트 앱 (완료 토글 기능 포함)
+    <body>
+        <!-- 시나리오: 간단한 TODO 리스트 앱 (완료 토글 기능 포함)
     - 할 일 입력 후 추가
     - ✅ 버튼으로 완료/미완료 상태 전환 (취소선 토글)
     - ❌ 버튼으로 삭제
     -->
 
-    <h3>📝 할 일 추가</h3>
-    <input type="text" id="todoInput" placeholder="할 일을 입력하세요" />
-    <button id="addBtn">추가</button>
+        <h3>📝 할 일 추가</h3>
+        <input type="text" id="todoInput" placeholder="할 일을 입력하세요" />
+        <button id="addBtn">추가</button>
+        <ul id="todoList"></ul>
 
-    <ul id="todoList"></ul>
+        <script>
+            const addBtn = document.querySelector("#addBtn");
+            const todoInput = document.querySelector("#todoInput");
+            const todoList = document.querySelector("#todoList");
 
-    <script>
-      const input = document.getElementById("todoInput");
-      const addBtn = document.getElementById("addBtn");
-      const todoList = document.getElementById("todoList");
+            addBtn.addEventListener("click", () => {
+                todoList.innerHTML += `
+                <li> <span class="task">${todoInput.value}</span> 
+                <button class="statusBtn">✅</button>
+                <button class="removeBtn">❌</button>
+                </li>`;
+            });
 
-      addBtn.addEventListener("click", () => {
-        const text = input.value.trim();
-        if (text === "") return;
+            todoList.addEventListener("click", (e) => {
+                if (e.target.classList.contains("statusBtn")) {
+                    const task = e.target.closest("li").querySelector(".task");
+                    task.classList.toggle("done");
+                }
+                if (e.target.classList.contains("removeBtn")) {
+                    e.target.closest("li").remove();
+                }
+            });
+        </script>
 
-        const li = document.createElement("li");
-        li.innerHTML = `
-      <span class="todo-text">${text}</span>
-      <button>✅</button>
-      <button>❌</button>
-    `;
-        todoList.appendChild(li);
-        input.value = "";
-      });
-
-      todoList.addEventListener("click", (e) => {
-        if (e.target.tagName !== "BUTTON") return;
-
-        const li = e.target.closest("li");
-        const textEl = li.querySelector(".todo-text");
-
-        if (e.target.textContent === "✅") {
-          textEl.classList.toggle("done");
-        }
-
-        if (e.target.textContent === "❌") {
-          li.remove();
-        }
-      });
-    </script>
-
-    <style>
-      .done {
-        text-decoration: line-through;
-        opacity: 0.6;
-      }
-    </style>
-  </body>
+        <style>
+            .done {
+                text-decoration: line-through;
+                opacity: 0.6;
+            }
+        </style>
+    </body>
 </html>
