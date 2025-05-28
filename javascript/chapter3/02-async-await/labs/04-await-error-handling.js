@@ -5,3 +5,17 @@
 - 예시 URL: https://jsonplaceholder.typicode.com/INVALID_URL
 - async/await 사용
 */
+
+async function getFetch() {
+    try {
+        const response = await fetch(
+            "https://jsonplaceholder.typicode.com.sdfsdfsdfL"
+        );
+        const data = await response.json();
+        console.log(data);
+    } catch (err) {
+        console.log("에러 발생: ", err);
+    }
+}
+
+getFetch();
