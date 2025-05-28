@@ -1,21 +1,22 @@
 const viewStart = document.querySelector("#view-start");
 const viewQuiz = document.querySelector("#view-quiz");
 const viewResult = document.querySelector("#view-result");
-const quizCnt = document.querySelector("#select-count");
+const quizCnt = document.querySelector("#select-count"); // 선택한 퀴즈 개수
 
 const progress = document.querySelector("#progress");
 const quizBox = document.querySelector("#quiz-box");
+const score = document.querySelector("#score");
 
 const startBtn = document.querySelector("#start-btn");
 
 const submitBtn = document.querySelector("#submit-btn");
 
 let currentQuizCnt = 1;
-let answerCnt = 0;
 let quizSet; // 전체 퀴즈 문제
 let quizObj; // 현재 퀴즈 문제
 let quized = []; // 푼 문제들
-let answers = []; // 정답은 true, 오답은 false (quized 배열과 순서 대응)
+let selectedAnswer = [];
+let OX = [];
 
 // 1. 문제 페이지 로딩
 startBtn.addEventListener("click", async () => {
@@ -24,7 +25,7 @@ startBtn.addEventListener("click", async () => {
 
     await getQuizSet();
     getRandomQuiz();
-    createQuizeBox();
+    createQuizBox();
     activateButton();
 });
 
@@ -43,7 +44,7 @@ function getRandomQuiz() {
     quized.push(quizObj);
 }
 
-async function createQuizeBox() {
+async function createQuizBox() {
     progress.textContent = `${currentQuizCnt}/${quizCnt.value}`;
     quizBox.innerHTML = `<div>${quizObj.question}</div>
     <div id="radioBtn">
@@ -63,21 +64,21 @@ function activateButton() {
 
 // 2. 문제 풀이
 submitBtn.addEventListener("click", () => {
-    console.log("현재 문제 번호: " + currentQuizCnt);
-    console.log("전체 문제 수: " + quizCnt.value);
-
     currentQuizCnt++;
     const selected = document.querySelector('input[name="answer"]:checked');
-    if (quizObj.answer == selected.value) {
-        answers.push(true);
-    } else {
-        answers.push(false);
-    }
+    selectedAnswer.push(selected.value)
 
     if (currentQuizCnt > quizCnt.value) {
         viewQuiz.style.display = "none";
         viewResult.style.display = "";
-        console.log(answers);
+
+        const passCnt = getPassCnt();
+        createScoreMessage(passCnt);
+        for (let i = 0; i < quized.length; i++) {
+            createReview(i);
+        }  
+
+        return; // 다음 문제 안 가도록 종료
     }
 
     nextQuiz();
@@ -85,7 +86,35 @@ submitBtn.addEventListener("click", () => {
 
 function nextQuiz() {
     getRandomQuiz();
-    createQuizeBox();
+    createQuizBox();
 }
 
 // 3. 결과 페이지 로딩
+
+function getPassCnt(){
+    let passCnt = 0;
+
+    for(let i = 0; i< quized.length; i++){
+        if(quized[i].answer == selectedAnswer[i]){
+            passCnt++;
+            OX.push("O");
+        } else{
+            OX.push("X");
+        }
+    }
+
+    return passCnt;
+}
+
+function createScoreMessage(passCnt){
+    score.innerHTML = `<div>총 ${quizCnt.value}문제 중 ${passCnt}개 정답!</div>`;
+}
+
+function createReview(i){
+    score.innerHTML += `<div class="review">
+    <div><span>Q${i}.</span> <span>${OX[i]}</span></div>
+    <div>${quized[i].question}</div>
+    <div>내 선택 ${Number(selectedAnswer[i]) + 1}번: ${quized[i].choices[selectedAnswer[i]]}</div>
+    <div>정답 ${Number(quized[i].answer) + 1}번: ${quized[i].choices[quized[i].answer]}</div>
+    </div>`;
+}

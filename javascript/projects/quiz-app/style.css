@@ -170,6 +170,7 @@ button:disabled {
     color: #2770fd;
 }
 
+/* 아래는 새롭게 작성한 CSS */
 #radioBtn > div {
     background-color: #b3ccff;
     border-radius: 6px;
