@@ -23,3 +23,25 @@ fetchProduct(3, (err, product) => {
   }
 });
 */
+
+function fetchProductPromise(productId) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (productId > 0) {
+                resolve({ id: productId, name: "상품" + productId });
+            } else {
+                reject("잘못된 상품 ID");
+            }
+        }, 800);
+    });
+}
+
+fetchProductPromise(3)
+    .then((product) => {
+        console.log("상품 정보:", product);
+    })
+    .catch((err) => {
+        console.error("에러:", err);
+    });
+
+console.log("...");
